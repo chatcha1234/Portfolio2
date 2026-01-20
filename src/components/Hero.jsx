@@ -1,37 +1,38 @@
-import React from "react";
-import HeroImage from "../assets/chando.jpeg";
-
 export const Hero = () => {
   return (
     <div
-      name="home"
-      className="min-h-screen w-full pt-20 md:pt-40 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]" // Adjusted padding-top
+      id="home"
+      className="min-h-screen w-full pt-20 md:pt-40" // Adjusted padding-top
     >
-      <div className="max-w-screen-lg flex flex-col-reverse mx-auto h-full w-full text-white justify-center items-center md:flex-row">
+      <div className="max-w-screen-lg flex flex-col-reverse mx-auto h-full w-full justify-center items-center md:flex-row">
         <div className="flex flex-col justify-center h-full text-center md:text-left px-6 mt-8 md:mt-0">
-          <h2 className="text-4xl sm:text-7xl font-bold">
-            MACHINE LEARNING ENGINEER
+          <h1 className="text-4xl sm:text-7xl font-bold text-text">
+            Hi, I'm <span className="text-primary">Chatchawan Damchum</span>
+          </h1>
+          <h2 className="text-2xl sm:text-4xl font-bold text-text-secondary mt-4">
+            Machine Learning Engineer
           </h2>
-          <p className="text-gray-500 max-w-md py-4 mx-auto md:mx-0">
-            Founder of Knowledge Doctor | Sharing my love for AI and data
-            science through engaging tutorials and content. Committed to helping
-            learners master ML, DL, and NLP. Empowering others to explore the
-            exciting world of artificial intelligence. Join me on my journey at
-            Knowledge Doctor.
+          <p className="text-text-secondary max-w-md py-4 mx-auto md:mx-0">
+            I work as an AI Automation Engineer, focusing on building workflow
+            automations that help teams reduce manual work and operate more
+            efficiently.
           </p>
-          <div className="w-fit px-6 py-3 mt-5 rounded-md bg-gradient-to-r from-rose-500 to-black-50 cursor-pointer">
-            <a href = "/chando.pdf" download={true}>
+          <div className="flex gap-4 justify-center md:justify-start mt-5">
+            <a
+              href="#projects"
+              className="px-8 py-3 bg-primary text-bg rounded-lg font-bold hover:bg-primary/90 transition-all"
+            >
+              View Work
+            </a>
+            <a
+              href="https://drive.google.com/drive/u/0/folders/1ZIt4-Trd1Bpp3qkBPbkQun0p-OfBZa0c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary/10 transition-all"
+            >
               Resume
             </a>
           </div>
-        </div>
-
-        <div className="flex justify-center items-center md:mt-0">
-          <img
-            src={HeroImage}
-            className="rounded-2xl mx-auto w-2/3 md:w-full"
-            alt="Hero"
-          />
         </div>
       </div>
     </div>

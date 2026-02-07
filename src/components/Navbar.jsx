@@ -1,46 +1,41 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
-const Navbar = () => {
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        zIndex: 1000,
-        width: "100%",
-        padding: "1rem",
-        transition: "all 0.3s ease,",
-      }}
+      className={`fixed top-0 w-full z-50 py-4 transition-all duration-300 ${
+        isScrolled
+          ? "bg-slate-900/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
     >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <a href="">Portfolio</a>
-        <ul style={{ display: "flex", gap: "2rem" }}>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+      <div className="container mx-auto px-4 flex justify-between items-center ">
+        <a href="#" className="text-2xl font-bold text-primary">
+          Portfolio.
+        </a>
+        <ul className="hidden md:flex gap-8">
+          {["Home", "About", "Skills", "Projects"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item.toLowerCase()}`}
+                className="hover:text-primary transition-colors"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
 };
-
-export default Navbar;

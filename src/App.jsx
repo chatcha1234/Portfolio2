@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -22,6 +23,13 @@ const App = () => {
           {/* Header - Fixed on large screens */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
             <div>
+              <div className="mb-6 h-24 w-24 overflow-hidden rounded-full border-2 border-primary/20 bg-slate-800 transition-all hover:border-primary lg:h-32 lg:w-32">
+                <img
+                  src="/profile.jpg"
+                  alt="Chatchawan (Chut)"
+                  className="h-full w-full object-cover grayscale-0 transition-all hover:scale-110"
+                />
+              </div>
               <h1 className="text-4xl font-bold tracking-tight text-lightestSlate sm:text-5xl">
                 <a href="/">Chatchawan (Chut)</a>
               </h1>
@@ -508,6 +516,15 @@ const ExperienceCard = ({ date, title, company, link, description, tags }) => {
   );
 };
 
+ExperienceCard.propTypes = {
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
 const ProjectCard = ({
   title,
   image,
@@ -606,6 +623,16 @@ const ProjectCard = ({
       </div>
     </li>
   );
+};
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  liveLink: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onImageClick: PropTypes.func.isRequired,
 };
 
 export default App;

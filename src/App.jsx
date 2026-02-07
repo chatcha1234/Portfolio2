@@ -298,6 +298,19 @@ const App = () => {
               <div>
                 <ul className="group/list">
                   <ProjectCard
+                    title="Napala Multimodal AI Assistant (n8n)"
+                    image="/projects/n8n-chatbot.png"
+                    description="An advanced multimodal RAG workflow that processes Text, Audio, and Image inputs from LINE Messenger. Built with n8n and Google Gemini, it retrieves verified store data from Pinecone to provide intelligent, contextual responses for a hardware business."
+                    tags={[
+                      "n8n",
+                      "Google Gemini (Multimodal)",
+                      "RAG",
+                      "Pinecone",
+                      "LINE API",
+                      "AI Automation",
+                    ]}
+                  />
+                  <ProjectCard
                     title="OpenClaw — Personal AI Assistant"
                     image="/projects/assistant.png"
                     description="The AI that actually does things. An open-source personal assistant that runs on any platform, managing everything from emails to web browsing via autonomous agents."

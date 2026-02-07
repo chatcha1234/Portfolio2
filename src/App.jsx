@@ -27,11 +27,11 @@ const App = () => {
                 <a href="/">Chatchawan (Chut)</a>
               </h1>
               <h2 className="mt-3 text-lg font-medium tracking-tight text-lightestSlate sm:text-xl">
-                Full Stack Developer | AI Enthusiast
+                AI Workflow Engineer | Software Automation
               </h2>
               <p className="mt-4 max-w-xs leading-normal text-slate">
-                I build clinical AI agents and modern web applications with a
-                focus on impact and efficiency.
+                I build intelligent AI agents and autonomous workflows that
+                actually do things.
               </p>
 
               <nav
@@ -298,9 +298,9 @@ const App = () => {
               <div>
                 <ul className="group/list">
                   <ProjectCard
-                    title="Autonomous Multi-Agent Assistant"
+                    title="OpenClaw — Personal AI Assistant"
                     image="/projects/assistant.png"
-                    description="Designed and developed a custom AI Dashboard for orchestrating specialized agents (Trading, News, Research, Workflow, Social). Features real-time status monitoring, agent performance tracking, and automated reporting systems."
+                    description="The AI that actually does things. An open-source personal assistant that runs on any platform, managing everything from emails to web browsing via autonomous agents."
                     tags={[
                       "Python",
                       "OpenClaw",

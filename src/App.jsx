@@ -301,6 +301,7 @@ const App = () => {
                     title="Napala Multimodal AI Assistant (n8n)"
                     image="/projects/n8n-chatbot.png"
                     description="An advanced multimodal RAG workflow that processes Text, Audio, and Image inputs from LINE Messenger. Built with n8n and Google Gemini, it retrieves verified store data from Pinecone to provide intelligent, contextual responses for a hardware business."
+                    link="https://github.com/chatcha1234/AI-Workflows"
                     tags={[
                       "n8n",
                       "Google Gemini (Multimodal)",

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const App = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
       document.documentElement.style.setProperty("--x", `${e.clientX}px`);
       document.documentElement.style.setProperty("--y", `${e.clientY}px`);
     };
@@ -310,6 +309,9 @@ const App = () => {
                       "LINE API",
                       "AI Automation",
                     ]}
+                    onImageClick={(src, title) =>
+                      setSelectedImage({ src, title })
+                    }
                   />
                   <ProjectCard
                     title="OpenClaw — Personal AI Assistant"
@@ -322,6 +324,9 @@ const App = () => {
                       "AI Dashboard",
                       "Autonomous Agents",
                     ]}
+                    onImageClick={(src, title) =>
+                      setSelectedImage({ src, title })
+                    }
                   />
                   <ProjectCard
                     title="Medical Multi-Agent RAG"
@@ -336,6 +341,9 @@ const App = () => {
                       "Pinecone",
                       "React",
                     ]}
+                    onImageClick={(src, title) =>
+                      setSelectedImage({ src, title })
+                    }
                   />
                   <ProjectCard
                     title="Real-time POS System"
@@ -344,6 +352,9 @@ const App = () => {
                     link="https://github.com/chatcha1234/POS-System"
                     liveLink="https://pos-system-swart-tau.vercel.app/"
                     tags={["React", "TypeScript", "Tailwind CSS", "Node.js"]}
+                    onImageClick={(src, title) =>
+                      setSelectedImage({ src, title })
+                    }
                   />
                   <ProjectCard
                     title="Prompt Print Demand"
@@ -352,6 +363,9 @@ const App = () => {
                     link="https://github.com/chatcha1234/prompt-print-demand-mern"
                     liveLink="https://project-promptprint-react-xi.vercel.app/ai-design"
                     tags={["MERN Stack", "TypeScript", "Tailwind CSS"]}
+                    onImageClick={(src, title) =>
+                      setSelectedImage({ src, title })
+                    }
                   />
                 </ul>
               </div>
@@ -386,6 +400,49 @@ const App = () => {
           </main>
         </div>
       </div>
+
+      {/* Image Modal Lightbox */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 p-4 transition-all duration-300 backdrop-blur-md"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-xl shadow-[0_0_50px_rgba(59,130,246,0.3)] ring-1 ring-white/20 animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute right-4 top-4 z-[110] flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/50 text-white backdrop-blur-md hover:bg-slate-800 focus:outline-none transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className="max-h-[80vh] w-auto object-contain"
+            />
+            <div className="bg-slate-900/80 p-4 text-center backdrop-blur-md border-t border-white/10">
+              <h4 className="text-lg font-bold text-white">
+                {selectedImage.title}
+              </h4>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -451,7 +508,15 @@ const ExperienceCard = ({ date, title, company, link, description, tags }) => {
   );
 };
 
-const ProjectCard = ({ title, image, description, link, liveLink, tags }) => {
+const ProjectCard = ({
+  title,
+  image,
+  description,
+  link,
+  liveLink,
+  tags,
+  onImageClick,
+}) => {
   return (
     <li className="mb-12">
       <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:opacity-100! lg:group-hover/list:opacity-50">
@@ -529,9 +594,14 @@ const ProjectCard = ({ title, image, description, link, liveLink, tags }) => {
           height="48"
           decoding="async"
           data-nimg="1"
-          className="z-10 rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
+          className="z-20 cursor-zoom-in rounded border-2 border-slate-200/10 transition hover:border-primary sm:order-1 sm:col-span-2 sm:translate-y-1"
           style={{ color: "transparent" }}
           src={image}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onImageClick(image, title);
+          }}
         />
       </div>
     </li>

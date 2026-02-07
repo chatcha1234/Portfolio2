@@ -15,7 +15,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-bg selection:bg-teal selection:text-navy selection:bg-opacity-30">
+    <div className="relative min-h-screen bg-bg selection:bg-primary/30 selection:text-primary">
       <div id="spotlight" />
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
@@ -145,8 +145,8 @@ const App = () => {
               </p>
               <p className="mb-4 text-slate leading-relaxed">
                 Over the{" "}
-                <span className="text-teal font-medium">past year</span>, I have
-                pivoted my career to focus entirely on{" "}
+                <span className="text-primary font-medium">past year</span>, I
+                have pivoted my career to focus entirely on{" "}
                 <span className="text-lightestSlate font-medium">
                   Software Engineering and AI Automation
                 </span>
@@ -159,7 +159,7 @@ const App = () => {
                 I specialize in bridging the gap between high-level human needs
                 and robust technical implementation. Currently, I am deeply
                 immersed in the world of{" "}
-                <span className="text-teal font-medium">
+                <span className="text-primary font-medium">
                   Multi-Agent RAG systems
                 </span>
                 , exploring how they can solve real-world challenges in
@@ -258,11 +258,11 @@ const App = () => {
                     rel="noreferrer"
                   >
                     <span>
-                      <span className="border-b border-transparent pb-px transition group-hover:border-teal">
+                      <span className="border-b border-transparent pb-px transition group-hover:border-primary">
                         View Full{" "}
                       </span>
                       <span className="whitespace-nowrap">
-                        <span className="border-b border-transparent pb-px transition group-hover:border-teal">
+                        <span className="border-b border-transparent pb-px transition group-hover:border-primary">
                           Résumé
                         </span>
                         <svg
@@ -348,21 +348,21 @@ const App = () => {
                 Coded in{" "}
                 <a
                   href="https://code.visualstudio.com/"
-                  className="font-medium text-slate-200 hover:text-teal focus-visible:text-teal"
+                  className="font-medium text-slate-200 hover:text-primary focus-visible:text-primary"
                 >
                   Visual Studio Code
                 </a>
                 . Built with{" "}
                 <a
                   href="https://react.dev/"
-                  className="font-medium text-slate-200 hover:text-teal focus-visible:text-teal"
+                  className="font-medium text-slate-200 hover:text-primary focus-visible:text-primary"
                 >
                   React
                 </a>{" "}
                 and{" "}
                 <a
                   href="https://tailwindcss.com/"
-                  className="font-medium text-slate-200 hover:text-teal focus-visible:text-teal"
+                  className="font-medium text-slate-200 hover:text-primary focus-visible:text-primary"
                 >
                   Tailwind CSS
                 </a>
@@ -391,7 +391,7 @@ const ExperienceCard = ({ date, title, company, link, description, tags }) => {
           <h3 className="font-medium leading-snug text-slate-200">
             <div>
               <a
-                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal focus-visible:text-teal group/link text-base"
+                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-primary focus-visible:text-primary group/link text-base"
                 href={link}
                 target="_blank"
                 rel="noreferrer"
@@ -425,7 +425,7 @@ const ExperienceCard = ({ date, title, company, link, description, tags }) => {
           <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
             {tags.map((tag) => (
               <li key={tag} className="mr-1.5 mt-2">
-                <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal cursor-default">
+                <div className="flex items-center rounded-full bg-primary-400/10 px-3 py-1 text-xs font-medium leading-5 text-primary cursor-default">
                   {tag}
                 </div>
               </li>
@@ -446,7 +446,7 @@ const ProjectCard = ({ title, image, description, link, liveLink, tags }) => {
           <h3 className="font-medium leading-snug text-slate-200">
             <div>
               <a
-                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal focus-visible:text-teal group/link text-base"
+                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-primary focus-visible:text-primary group/link text-base"
                 href={liveLink || link}
                 target="_blank"
                 rel="noreferrer"
@@ -482,7 +482,7 @@ const ProjectCard = ({ title, image, description, link, liveLink, tags }) => {
               href={link}
               target="_blank"
               rel="noreferrer"
-              className="relative z-20 mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-teal focus-visible:text-teal"
+              className="relative z-20 mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-primary focus-visible:text-primary"
               aria-label="View GitHub Repository"
             >
               <svg
@@ -501,7 +501,7 @@ const ProjectCard = ({ title, image, description, link, liveLink, tags }) => {
           <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
             {tags.map((tag) => (
               <li key={tag} className="mr-1.5 mt-2">
-                <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal cursor-default">
+                <div className="flex items-center rounded-full bg-primary-400/10 px-3 py-1 text-xs font-medium leading-5 text-primary cursor-default">
                   {tag}
                 </div>
               </li>

@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0f172a;
-  --color-text: #e2e8f0;
+  --color-bg: #030712;
+  --color-text: #f8fafc;
   --color-text-secondary: #94a3b8;
-  --color-primary: #5eead4;
-  --color-secondary: #1e293b;
+  --color-primary: #3b82f6;
+  --color-secondary: #0f172a;
   
   --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -30,7 +30,7 @@ body {
   z-index: 30;
   background: radial-gradient(
     600px circle at var(--x, 0) var(--y, 0),
-    rgba(29, 78, 216, 0.15),
+    rgba(59, 130, 246, 0.15),
     transparent 80%
   );
 }

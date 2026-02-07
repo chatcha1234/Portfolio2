@@ -300,13 +300,13 @@ const App = () => {
                   <ProjectCard
                     title="Autonomous Multi-Agent Assistant"
                     image="/projects/assistant.png"
-                    description="An internal AI orchestrator featuring 5 specialized agents (Trading, News, Research, Workflow, Social). Capable of autonomous system monitoring, real-time daily reporting via Telegram, and intelligent workflow execution."
+                    description="Designed and developed a custom AI Dashboard for orchestrating specialized agents (Trading, News, Research, Workflow, Social). Features real-time status monitoring, agent performance tracking, and automated reporting systems."
                     tags={[
                       "Python",
                       "OpenClaw",
                       "Telegram API",
-                      "Agentic AI",
-                      "AI Orchestration",
+                      "AI Dashboard",
+                      "Autonomous Agents",
                     ]}
                   />
                   <ProjectCard

@@ -298,6 +298,18 @@ const App = () => {
               <div>
                 <ul className="group/list">
                   <ProjectCard
+                    title="Autonomous Multi-Agent Assistant"
+                    image="/projects/assistant.png"
+                    description="An internal AI orchestrator featuring 5 specialized agents (Trading, News, Research, Workflow, Social). Capable of autonomous system monitoring, real-time daily reporting via Telegram, and intelligent workflow execution."
+                    tags={[
+                      "Python",
+                      "OpenClaw",
+                      "Telegram API",
+                      "Agentic AI",
+                      "AI Orchestration",
+                    ]}
+                  />
+                  <ProjectCard
                     title="Medical Multi-Agent RAG"
                     image="/projects/medical.png"
                     description="A professional-grade medical consultation system built with CrewAI and Gemini 2.0. Demonstrates hierarchical multi-agent orchestration for clinical triage."
